@@ -9,7 +9,7 @@ bulk label your DLS Dataset records with:
 ```
 python3 main.py
 ```
-
+\
 Valid values for labeling_algorithm are:\
 \
 <b>"first_letter"</b>: the first letter of the DLS
