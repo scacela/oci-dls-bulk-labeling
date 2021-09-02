@@ -3,9 +3,9 @@
 
 ### Data Labeling Service (DLS) Bulk-Labeling tool
 
-1. Set up your [OCI config file](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File)
-2. Assign your own variables in <b>config.py</b> and then
-bulk label your DLS Dataset records with:
+1. Set up your [OCI config file](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File).
+2. Assign your own variables in <b>config.py</b>.
+3. bulk label your DLS Dataset records with:
 
 	```
 	python3 main.py
