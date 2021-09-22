@@ -14,18 +14,21 @@ from oci.data_labeling_service_dataplane.models import CreateAnnotationDetails
 
 def main(label, record_id):
     # client definition
-    def init_dls_dp_client(config, service_endpoint):
-        dls_client = DataLabelingClient(config, service_endpoint=service_endpoint)
+    def init_dls_dp_client(config, service_endpoint, retry_strategy):
+        dls_client = DataLabelingClient(config=config, service_endpoint=service_endpoint, retry_strategy=retry_strategy)
         return dls_client
 
-    # payload
-    config_file =oci.config.from_file('~/.oci/config')
+    config_file = oci.config.from_file('~/.oci/config')
     service_endpoint_dp = "https://dlsprod-dp.us-ashburn-1.oci.oraclecloud.com"
-    dls_dp_client = init_dls_dp_client(config_file, service_endpoint_dp)
+    retry_strategy = oci.retry.DEFAULT_RETRY_STRATEGY
+    
+    dls_dp_client = init_dls_dp_client(config_file, service_endpoint_dp, retry_strategy)
+
     # payload
     labels_obj = [Label(label=label)]
     entity_type = "GENERIC"
     entity_obj = [GenericEntity(entity_type=entity_type, labels=labels_obj)]
+    
     create_annotation_details_obj = CreateAnnotationDetails(record_id=record_id, compartment_id=compartment_id, entities=entity_obj)
 
     # api call
