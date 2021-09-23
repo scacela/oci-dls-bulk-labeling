@@ -3,9 +3,9 @@
 
 # compartment where DLS Dataset exists
 compartment_id = "YOUR_COMPARTMENT_ID_NERE"
-# ocid of the Dataset
+# ocid of the DLS Dataset
 dataset_id = "YOUR_DATASET_ID_HERE"
-# an array where the elements are all of the labels that you will use to annotate records in your dataset with. Each element is a separate label.
+# an array where the elements are all of the labels that you will use to annotate records in your DLS Dataset with. Each element is a separate label.
 labels = ["cell", "debris", "stripe"]
 # the algorithm that will be used to assign labels to DLS Dataset records
 labeling_algorithm = "first_letter"
