@@ -2,13 +2,8 @@ import dls_list_records
 import dls_create_annotation
 import sys
 from config import *
-import datetime;
-
-# first_letter algorithm
-def letter_to_label(letter):
-	for l in labels:
-		if letter == l[0] or letter.lower() == l[0]:
-			return l 
+import datetime
+import labeling_schemes.first_letter as first_letter
 
 def main():
 	num_records = list_records_limit
@@ -20,14 +15,7 @@ def main():
 		for n in names:
 			# first letter algorithm
 			if labeling_algorithm == "first_letter":
-				label = letter_to_label(letter=n[0])
-				if label:
-					dls_create_annotation.main(label=label, record_id=ids[count_records_in_batch])
-				else:
-					print("current time: " + str(datetime.datetime.now()))
-					print("No label match for record " + str(n))
-					print("with id: " + str(ids[count_records_in_batch]))
-					print()
+				first_letter.main(name=n, record_id=ids[count_records_in_batch])
 			count_records_in_batch+=1
 			count_records_total+=1
 			print("current time: " + str(datetime.datetime.now()))

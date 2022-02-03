@@ -18,8 +18,8 @@ def main(label, record_id):
         dls_client = DataLabelingClient(config=config, service_endpoint=service_endpoint, retry_strategy=retry_strategy)
         return dls_client
 
-    config_file = oci.config.from_file('~/.oci/config')
-    service_endpoint_dp = "https://dlsprod-dp.us-ashburn-1.oci.oraclecloud.com"
+    config_file = oci.config.from_file(config_file_path, config_profile)
+    service_endpoint_dp = f"https://dlsprod-dp.{region_identifier}.oci.oraclecloud.com"
     retry_strategy = oci.retry.DEFAULT_RETRY_STRATEGY
     
     dls_dp_client = init_dls_dp_client(config_file, service_endpoint_dp, retry_strategy)
@@ -37,5 +37,5 @@ def main(label, record_id):
         anno_response = dls_dp_client.create_annotation(create_annotation_details=create_annotation_details_obj)
     except Exception as error:
         anno_response = error
-
+        print(anno_response)
     return anno_response.data
