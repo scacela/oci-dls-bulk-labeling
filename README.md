@@ -14,7 +14,11 @@
 	\
 	Valid values for labeling_algorithm are:\
 	\
-	<b>"first_letter"</b>: the first letter of the DLS
+	<b>"first_letter"</b>: The first letter of the DLS
 		Dataset record's name must match the first
 		letter of the label that it will be
-		annotated with.
+		annotated with. The matching is not case-sensitive.
+	<b>"dir_name"</b>: The name of the root-parent folder
+		containing the record must match the label that it
+		will be annotated with. The matching is not
+		case-sensitive.

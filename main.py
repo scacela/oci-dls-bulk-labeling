@@ -4,6 +4,7 @@ import sys
 from config import *
 import datetime
 import labeling_schemes.first_letter as first_letter
+import labeling_schemes.dir_name as dir_name
 
 def main():
 	num_records = list_records_limit
@@ -13,8 +14,11 @@ def main():
 		names, ids, num_records = dls_list_records.main()
 		count_records_in_batch=0
 		for n in names:
+			# directory name algorithm
+			if labeling_algorithm == "dir_name":
+				dir_name.main(name=n, record_id=ids[count_records_in_batch])
 			# first letter algorithm
-			if labeling_algorithm == "first_letter":
+			elif labeling_algorithm == "first_letter":
 				first_letter.main(name=n, record_id=ids[count_records_in_batch])
 			count_records_in_batch+=1
 			count_records_total+=1
