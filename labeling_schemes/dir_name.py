@@ -10,7 +10,7 @@ def dirname_to_label(name):
 	for l in labels:
 		dirname = regex.match(name).groups()[0]
 		if l.lower() == dirname.lower():
-			return dirname
+			return l
 
 def main(name, record_id):
 	label = dirname_to_label(name=name)
