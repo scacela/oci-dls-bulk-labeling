@@ -21,13 +21,15 @@ python3 main.py
 Valid values for labeling_algorithm are:
 
 "first_letter": The first letter of the DLS
-	Dataset record's name must match the first
-	letter of the label that it will be
+	Dataset record's name must be equal to the first
+	letter of the label that the record will be
 	annotated with. The matching is not case-sensitive.
 
-"dir_name": The name of the root-parent folder
-	containing the record must match the label that it
-	will be annotated with. The matching is not
-	case-sensitive.
+"first_match": The regular expression (regex) pattern
+	will be applied to the DLS Dataset record's name,
+	and the first capture group extracted must be equal
+	to the label that the record will be annotated with.
+	The regex pattern must be assigned to the variable
+	named first_match_regex_pattern.
 '''
 )
