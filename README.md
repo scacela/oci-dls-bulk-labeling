@@ -12,7 +12,7 @@
 	python3 main.py
 	```
 	\
-	Valid values for labeling_algorithm are:\
+	Valid values for <b>labeling_algorithm</b> are:\
 	\
 	<b>"first_letter"</b>: The first letter of the DLS
 		Dataset record's name must be equal to the first
