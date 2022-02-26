@@ -19,6 +19,7 @@
 		letter of the label that the record will be
 		annotated with. The matching is not case-sensitive.
 	\
+	\
 	<b>"first_match"</b>: The regular expression (regex) pattern
 		will be applied to the DLS Dataset record's name,
 		and the first capture group extracted must be equal
