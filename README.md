@@ -21,7 +21,5 @@
 	\
 	\
 	<b>"first_match"</b>: The regular expression (regex) pattern
-		will be applied to the DLS Dataset record's name,
-		and the first capture group extracted must be equal
-		to the label that the record will be annotated with.
-		The regex pattern must be assigned to <b>first_match_regex_pattern</b>.
+		assigned to <b>first_match_regex_pattern</b> will be applied to the DLS Dataset record's name, and the first capture group extracted must be equal to the label that
+		the record will be annotated with.

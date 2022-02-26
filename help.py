@@ -26,10 +26,10 @@ Valid values for labeling_algorithm are:
 	annotated with. The matching is not case-sensitive.
 
 "first_match": The regular expression (regex) pattern
-	will be applied to the DLS Dataset record's name,
-	and the first capture group extracted must be equal
-	to the label that the record will be annotated with.
-	The regex pattern must be assigned to the variable
-	named first_match_regex_pattern.
+	assigned to the variable named
+	first_match_regex_pattern will be applied to the
+	DLS Dataset record's name, and the first capture
+	group extracted must be equal to the label that
+	the record will be annotated with.
 '''
 )
