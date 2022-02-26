@@ -14,10 +14,8 @@ def main():
 		names, ids, num_records = dls_list_records.main()
 		count_records_in_batch=0
 		for n in names:
-			# directory name algorithm
 			if labeling_algorithm == "first_match":
 				first_match.main(name=n, record_id=ids[count_records_in_batch])
-			# first letter algorithm
 			elif labeling_algorithm == "first_letter":
 				first_letter.main(name=n, record_id=ids[count_records_in_batch])
 			count_records_in_batch+=1
